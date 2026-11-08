@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sadhvi Furniture and Fabrications</title>
+
+<style>
+
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    background: #1e3a5f;
+    color: white;
+    padding: 12px 5%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-section img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.logo-section h1 {
+    font-size: 24px;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+/* MAIN CONTENT */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* PAGE SECTIONS */
+.page-section {
+    display: none;
+    flex: 1;
+    padding: 35px 5%;
+}
+
+.page-section.active {
+    display: block;
+}
+
+/* HOME BANNER */
+.banner {
+    
+    color:#202a44;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.banner h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* PRODUCTS */
+.section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #202a44;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    padding: 15px;
+    background: white;
+}
+
+.product-card h3 {
+    color: #202a44;
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: #555;
+    line-height: 1.5;
+    padding: 0 15px;
+}
+
+/* ABOUT / CONTACT / TERMS */
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.content-container h2 {
+    color: #202a44;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-container h3 {
+    color: #1e3a5f;
+    margin: 20px 0 10px;
+}
+
+.content-container p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.content-container ul {
+    padding-left: 25px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* CONTACT DETAILS */
+.contact-details {
+    text-align: center;
+    line-height: 2;
+}
+
+.contact-details a {
+    color: #1e3a5f;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    background: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.footer-links {
+    margin-top: 12px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.footer-links a:hover {
+    color: #ffd166;
+    text-decoration: underline;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-section h1 {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        padding-top: 20px;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .product-card img {
+        height: 180px;
+    }
+
+    .banner {
+        padding: 40px 15px;
+    }
+
+    .banner h2 {
+        font-size: 25px;
+    }
+
+    .content-container {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        height: 230px;
+    }
+
+    .page-section {
+        padding: 25px 4%;
+    }
+
+    .footer-links a {
+        display: inline-block;
+        margin: 6px 8px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-container">
+
+        <div class="logo-section">
+            <img src="images/logo.png" alt="Sadhvi Fabrications Logo">
+            <h3>Sadhvi Furniture and Fabrications Khammam</h3>
+        </div>
+
+        <button class="menu-toggle"
+                onclick="toggleMenu()"
+                aria-label="Toggle navigation">
+            ☰
+        </button>
+
+        <nav id="navbar">
+            <a onclick="showSection('home')">Home</a>
+            <a onclick="showSection('about')">About Us</a>
+            <a onclick="showSection('contact')">Contact Us</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="page-section active">
+
+        <div class="banner">
+            <h2 class="color:#800020">Welcome to Sadhvi Furniture and Fabrications</h2>
+            <p>
+                Your trusted partner for slotted angle racks,
+                storage solutions, second-hand racks, and furniture fabrication.
+            </p>
+        </div>
+
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/rack.png" alt="Slotted Angle Rack">
+                <h3>Slotted Angle Racks</h3>
+                <p>Strong and durable storage racks for shops, homes, and warehouses.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/shoe.png" alt="Shoe Rack">
+                <h3>Shoe Racks</h3>
+                <p>Space-saving shoe storage solutions for homes and offices.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/basket.png" alt="Storage Basket Rack">
+                <h3>Storage Basket Racks</h3>
+                <p>Organized storage solutions for everyday use.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/kitchen-rack.png" alt="Kitchen Rack">
+                <h3>Kitchen Racks</h3>
+                <p>Practical racks to keep your kitchen organized.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/book-rack.png" alt="Book Rack">
+                <h3>Book Racks</h3>
+                <p>Convenient storage for books, files, and documents.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/display-rack.png" alt="Display Rack">
+                <h3>Display Racks</h3>
+                <p>Display solutions for retail shops and commercial spaces.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/wardrobe.png" alt="Wardrobe">
+                <h3>Wardrobes</h3>
+                <p>Storage solutions for clothing and household items.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/office-rack.png" alt="Office Rack">
+                <h3>Office Racks</h3>
+                <p>Organized storage for office materials and files.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/heavy-rack.png" alt="Heavy Duty Rack">
+                <h3>Heavy Duty Racks</h3>
+                <p>Storage racks designed for heavier items.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/corner-rack.png" alt="Corner Rack">
+                <h3>Corner Racks</h3>
+                <p>Make better use of unused corner spaces.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/wall-rack.png" alt="Wall Rack">
+                <h3>Wall Racks</h3>
+                <p>Convenient wall-mounted storage solutions.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="images/custom-rack.png" alt="Custom Rack">
+                <h3>Custom Fabrication</h3>
+                <p>Customized racks and furniture according to your requirements.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="page-section">
+
+        <div class="content-container">
+
+            <h2>About Us</h2>
+
+            <p>
+                Welcome to Sadhvi Furniture and Fabrications.
+                We provide practical and durable storage solutions
+                for homes, shops, offices, and commercial spaces.
+            </p>
+
+            <p>
+                Our services include slotted angle racks sales and service,
+                second-hand racks sales, and wood and iron furniture fabrication.
+            </p>
+
+            <p>
+                We focus on quality, functionality, and customer satisfaction.
+                Our goal is to provide suitable storage and fabrication
+                solutions according to customer requirements.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT US SECTION -->
+    <section id="contact" class="page-section">
+
+        <div class="content-container">
+
+            <h2>Contact Us</h2>
+
+            <div class="contact-details">
+
+                <p>
+                    For product enquiries, rack sales, service, and
+                    furniture fabrication, please contact us.
+                </p>
+
+                <p>
+                    <strong>Business Name:</strong><br>
+                    Sadhvi Furniture and Fabrications
+                </p>
+
+                <p>
+                    <strong>Phone:</strong><br>
+                    <a href="tel:+919542040648">+91 95420 40648</a>
+                </p>
+
+                <p>
+                    <strong>Location:</strong><br>
+                    Khammam, Telangana, India
+                </p>
+
+                <p>
+                    <strong>Our Services:</strong><br>
+                    Slotted Angle Racks Sales and Service<br>
+                    Second-Hand Racks Sales<br>
+                    Wood and Iron Furniture Fabrication
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TERMS AND CONDITIONS SECTION -->
+    <section id="terms" class="page-section">
+
+        <div class="content-container">
+
+            <h3>Terms & Conditions</h3>
+            <p class="last-updated">
+        Last Updated: November 2026
+    </p>
+
+    <p>
+        Welcome to Sadhvi Furniture Khammam.
+        By accessing or using our website, you agree
+        to the following Terms and Conditions.
+        Please read them carefully.
+    </p>
+
+      <h3>1. Products and Descriptions</h3>
+
+    <p>
+        We provide information about furniture,
+        slotted angle racks, storage racks and
+        fabrication products through this website.
+        Product images are for illustration purposes.
+        Actual product appearance, dimensions,
+        materials and specifications may vary.
+    </p>
+
+
+    <h3>2. Product Prices</h3>
+
+    <p>
+        All prices displayed on our website are
+        subject to change without prior notice.
+        Final product prices will be confirmed
+        at the time of order confirmation.
+        Additional charges such as transportation,
+        delivery or installation may apply.
+    </p>
+
+
+    <h3>3. Orders and Payments</h3>
+
+    <p>
+        Orders will be confirmed after agreement
+        between the customer and Sadhvi Furniture
+        regarding product specifications, quantity,
+        pricing and payment terms.
+    </p>
+
+    <p>
+        Any advance payment, balance payment or
+        other payment conditions will be communicated
+        to the customer before order confirmation.
+    </p>
+
+
+    <h3>4. Delivery and Transportation</h3>
+
+    <p>
+        Delivery timelines depend on product
+        availability, order quantity and delivery
+        location. Transportation and delivery
+        charges, where applicable, will be informed
+        before confirming the order.
+    </p>
+
+
+    <h3>5. Product Availability</h3>
+
+    <p>
+        Product availability may change depending
+        on stock and manufacturing requirements.
+        We reserve the right to update or discontinue
+        product listings on our website.
+    </p>
+
+
+    <h3>6. Warranty and Returns</h3>
+
+    <p>
+        Warranty, replacement and return conditions,
+        if applicable, will be communicated separately
+        at the time of purchase. Customers are advised
+        to check product specifications and condition
+        before accepting delivery.
+    </p>
+
+
+    <h3>7. Website Information</h3>
+
+    <p>
+        We try to keep all website information
+        accurate and updated. However, we do not
+        guarantee that all product descriptions,
+        images, prices or other information will
+        always be complete or error-free.
+    </p>
+
+
+
+
+
+    <h3>8. Changes to Terms</h3>
+
+    <p>
+        We reserve the right to modify these
+        Terms and Conditions whenever necessary.
+        Updated terms will be published on this page.
+    </p>
+
+
+    <h3>9. Contact Us</h3>
+
+    <p>
+        If you have any questions regarding
+        these Terms and Conditions, please contact us.
+    </p>
+
+    <p>
+        <strong>Business Name:</strong>
+        Sadhvi Furniture Khammam
+    </p>
+
+    <p>
+        <strong>Phone:</strong>
+        +91 95420 40648
+    </p>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        &copy; <span id="year"></span>
+        Sadhvi Furniture and Fabrications. All Rights Reserved.
+    </p>
+
+    <p>
+        Slotted Angle Racks | Second-Hand Racks |
+        Wood and Iron Furniture Fabrication
+    </p>
+
+    <div class="footer-links">
+        <a onclick="showSection('terms')">Terms & Conditions</a>
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+/* SHOW SELECTED SECTION */
+function showSection(sectionId) {
+
+    const sections = document.querySelectorAll(".page-section");
+
+    sections.forEach(function(section) {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+
+    /* Close mobile navigation */
+    document.getElementById("navbar").classList.remove("show");
+
+    /* Return page to top */
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+/* MOBILE MENU */
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+}
+
+/* AUTOMATIC COPYRIGHT YEAR */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
