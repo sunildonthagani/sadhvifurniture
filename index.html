@@ -299,6 +299,49 @@ footer p {
     }
 }
 
+
+
+/* MOBILE RESPONSIVE PRODUCT GRID */
+@media (max-width: 650px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+}
+
+
+
+/* MOBILE NAVIGATION */
+@media (max-width: 768px) {
+
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+}
+
+
 </style>
 </head>
 
@@ -309,7 +352,7 @@ footer p {
     <div class="header-container">
 
         <div class="logo-section">
-            <img src="logo.png" alt="Sadhvi Fabrications Logo">
+            <img src="images/logo.png" alt="Sadhvi Fabrications Logo">
             <h3>Sadhvi Furniture and Fabrications Khammam</h3>
         </div>
 
@@ -451,7 +494,7 @@ footer p {
                 <h3>Shoe Racks(4 Tier,5Tier)</h3>
                 <p>Space-saving shoe storage solutions for homes and offices.</p>
                 <p class="product-price">
-                   ₹ 5500 - 6200
+                   ₹ 5500-6200
                 </p>
             </div>
 
@@ -460,7 +503,7 @@ footer p {
                 <h3>Storage Basket Racks</h3>
                 <p>Organized storage solutions for everyday use</p>
                  <p class="product-price">
-                   ₹ 1450 - 2200
+                   ₹ 1450-2200
                 </p>
             </div>
 
@@ -477,7 +520,7 @@ footer p {
                 <h3>Front Strip</h3>
                 <p>Front Strip to avaoid falling Objects</p>
                  <p class="product-price">
-                   ₹ 50 / feet
+                   ₹ 50/feet
                 </p>
             </div>
 
